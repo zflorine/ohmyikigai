@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oh my ikigai! - quiz simple</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro-panel" aria-label="Accueil">
+        <div class="brand-row">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="petal petal-love"></span>
+            <span class="petal petal-skill"></span>
+            <span class="petal petal-need"></span>
+            <span class="petal petal-value"></span>
+            <span class="mark-center"></span>
+          </span>
+          <span class="brand-name">Oh my ikigai!</span>
+        </div>
+        <div class="intro-copy">
+          <p class="eyebrow">Quiz personnel</p>
+          <h1>Oh my ikigai!</h1>
+          <p>
+            Répondez à 20 questions courtes pour faire apparaître une piste
+            concrète: secteurs, types de rôles et prochains pas.
+          </p>
+        </div>
+        <img
+          class="hero-art"
+          src="assets/ikigai-garden.png"
+          alt="Paysage calme avec un chemin circulaire et quatre zones colorées"
+        >
+      </section>
+
+      <section class="quiz-panel" aria-label="Quiz ikigai">
+        <div class="topbar">
+          <div>
+            <p class="step-label" id="stepLabel">Question 1 sur 20</p>
+            <h2 id="questionTitle">Chargement...</h2>
+          </div>
+          <button class="ghost-button" id="resetButton" type="button" title="Recommencer">
+            <span aria-hidden="true">↻</span>
+          </button>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <form id="quizForm" class="quiz-form">
+          <fieldset class="answer-grid" id="answerGrid"></fieldset>
+          <div class="nav-row">
+            <button class="ghost-button wide" id="backButton" type="button">
+              <span aria-hidden="true">←</span>
+              Retour
+            </button>
+          </div>
+        </form>
+
+        <section class="result-view" id="resultView" aria-live="polite" hidden>
+          <div class="result-header">
+            <p class="eyebrow">✨ Votre piste</p>
+            <h2 id="resultTitle"></h2>
+            <p id="resultSummary"></p>
+          </div>
+
+          <div class="venn" aria-label="Carte des quatre dimensions de l'ikigai">
+            <span class="circle love">Ce que vous aimez</span>
+            <span class="circle skill">Ce que vous savez faire</span>
+            <span class="circle need">Ce dont le monde a besoin</span>
+            <span class="circle value">Ce qui peut vous faire vivre</span>
+            <strong>Ikigai</strong>
+          </div>
+
+          <div class="recommendation-grid">
+            <article class="recommendation-card">
+              <h3>🧭 Secteurs à explorer</h3>
+              <ul id="sectorList"></ul>
+            </article>
+            <article class="recommendation-card">
+              <h3>💼 Types de rôles</h3>
+              <ul id="roleList"></ul>
+            </article>
+          </div>
+
+          <div class="score-list" id="scoreList"></div>
+
+          <div class="next-steps">
+            <h3>✨ Trois prochains pas</h3>
+            <ol id="nextSteps"></ol>
+          </div>
+
+          <button class="primary-button full" id="againButton" type="button">
+            Refaire le quiz
+            <span aria-hidden="true">↻</span>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
